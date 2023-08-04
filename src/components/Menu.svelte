@@ -2,11 +2,13 @@
     import Question from "./Question.svelte";
     import { scorecardStore } from "../stores/scorecardStore";
     import { settingsStore } from "../stores/settingsStore";
+    import Confirm from "./Confirm.svelte";
 
     export let numberOfRows = 0;
     export let totalSum = 0;
 
     let showMenu = false;
+    let confirmReset = false;
 
     function reset_scorecard() {
         showMenu = false;
@@ -33,7 +35,7 @@
                 </div>
             </div>
             <div>
-                <button on:click={reset_scorecard} class="action-button">
+                <button on:click={() => (confirmReset = true)} class="action-button">
                     <span class=" button-icon material-symbols-outlined">restart_alt</span>
                     Börja om
                 </button>
@@ -60,6 +62,13 @@
         {/if}
     </button>
 </div>
+
+<Confirm
+    on:confirm={reset_scorecard}
+    bind:show={confirmReset}
+    title={"Är du säker?"}
+    content={"Om du börjar om kommer du att förlora alla dina svar."}
+/>
 
 <style>
     .action-button {
