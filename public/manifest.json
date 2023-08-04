@@ -1,0 +1,39 @@
+{
+    "short_name": "0-100",
+    "name": "MIG 0-100 poängräknare",
+    "icons": [
+        {
+            "src": "./images/icon-192.png",
+            "type": "image/png",
+            "sizes": "192x192",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "./images/icon-512.png",
+            "type": "image/png",
+            "sizes": "512x512",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "./images/icon-1024.png",
+            "type": "image/png",
+            "sizes": "1024x1024",
+            "purpose": "any maskable"
+        }
+    ],
+    "start_url": "/index.html",
+    "background_color": "#fff",
+    "display": "standalone",
+    "scope": "./",
+    "theme_color": "#119d8a",
+    "shortcuts": [],
+    "description": "Poängblock till MIG 0-100-spel",
+    "screenshots": [
+        {
+            "src": "/images/screenshot1.png",
+            "type": "image/png",
+            "sizes": "900x668",
+            "form_factor": "wide"
+        }
+    ]
+}
