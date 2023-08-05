@@ -21,7 +21,7 @@
             "purpose": "any maskable"
         }
     ],
-    "start_url": "/index.html",
+    "start_url": "./index.html",
     "background_color": "#fff",
     "display": "standalone",
     "scope": "./",
@@ -30,7 +30,7 @@
     "description": "Poängblock till MIG 0-100-spel",
     "screenshots": [
         {
-            "src": "/images/screenshot1.png",
+            "src": "./images/screenshot1.png",
             "type": "image/png",
             "sizes": "900x668",
             "form_factor": "wide"
