@@ -4,12 +4,21 @@
     export let guess = 0;
     export let correct = 0;
 
+    $: guess = inputValidation(guess);
+    $: correct = inputValidation(correct);
+
     function saveScorecardRow() {
         scorecardStore.add({ guess, correct });
+        guess = 0;
+        correct = 0;
     }
 
-    function inputValidation(e) {
-        // TODO Add input validation
+    function inputValidation(n: number) {
+        if (n === null) return 0;
+        if (n < 0) return 0;
+        if (n > 100) return 100;
+        if (Number.isInteger(n)) return n - (n % 1);
+        return n;
     }
 
     function selectAllText(e) {
@@ -19,21 +28,13 @@
 
 <div id="input-groups">
     <span>
-        <label for="input-guess">Ditt svar</label>
-        <input bind:value={guess} on:click={selectAllText} id="input-guess" type="number" min="0" max="100" step="1" />
+        <label for="guess">Ditt svar</label>
+        <input bind:value={guess} on:click={selectAllText} id="guess" type="number" min="0" max="100" step="1" />
     </span>
 
     <span>
-        <label for="input-correct">Rätt svar</label>
-        <input
-            bind:value={correct}
-            on:click={selectAllText}
-            id="input-correct"
-            type="number"
-            min="0"
-            max="100"
-            step="1"
-        />
+        <label for="correct">Rätt svar</label>
+        <input bind:value={correct} on:click={selectAllText} id="correct" type="number" min="0" max="100" step="1" />
     </span>
 </div>
 
