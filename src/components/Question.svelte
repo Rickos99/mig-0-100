@@ -17,7 +17,7 @@
         if (n === null) return 0;
         if (n < 0) return 0;
         if (n > 100) return 100;
-        if (Number.isInteger(n)) return n - (n % 1);
+        if (!Number.isInteger(n)) return n - (n % 1);
         return n;
     }
 
